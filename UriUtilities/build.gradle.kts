@@ -49,4 +49,18 @@ dependencies {
 //    androidTestImplementation(libs.androidx.espresso.core)
 }
 
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "com.github.Utilities"
+            artifactId = "UriUtilities"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
 
